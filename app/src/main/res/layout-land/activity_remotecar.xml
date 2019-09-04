@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="3"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+            <TextView
+                android:id="@+id/log_right"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="转动角度:0"
+                android:layout_marginRight="10dp"
+                android:layout_above="@id/rockerView_right"
+                android:layout_alignParentRight="true" />
+                <TextView
+                    android:id="@+id/velocity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text= "速度:0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_above="@id/rockerView_right"
+                    android:layout_alignParentRight="true" />
+            </LinearLayout>
+            <com.example.administrator.testone.RockerView
+                android:id="@+id/rockerView_right"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                app:areaBackground="@drawable/default_area_bg"
+                app:rockerBackground="@drawable/default_rocker_bg"
+                app:rockerRadius="30dp" />
+            <LinearLayout
+                android:id="@+id/ll_go_forward"
+                android:layout_width="match_parent"
+                android:layout_height="235px"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/iv_forward"
+                    android:layout_width="235px"
+                    android:layout_height="235px"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/bg_iv_forward" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_right_turn"
+                android:layout_width="wrap_content"
+                android:layout_height="235px"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/iv_left"
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:background="@drawable/bg_iv_left" />
+
+                <Button
+                    android:id="@+id/iv"
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:text="OK"
+                     />
+
+                <Button
+                    android:id="@+id/iv_right"
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:background="@drawable/bg_iv_right" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_go_back"
+                android:layout_width="match_parent"
+                android:layout_height="235px"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/iv_back"
+                    android:layout_width="235px"
+                    android:layout_height="235px"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/bg_iv_back" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ditu"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="8">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <com.baidu.mapapi.map.MapView
+                    android:id="@+id/bmapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/xiangji"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="8"
+                android:visibility="gone">
+
+                <SurfaceView
+                    android:id="@+id/realplay_sv_outside"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/inofcar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="车内遥控" />
+
+                <Button
+                    android:id="@+id/outofcar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="车外遥控" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_accelerator"
+                    android:layout_width="235px"
+                    android:layout_height="384px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/iv_accelerator"
+                        android:layout_width="235px"
+                        android:layout_height="256px"
+                        android:background="@drawable/bg_iv_accelerator" />
+
+                    <TextView
+                        android:layout_width="235px"
+                        android:layout_height="128px"
+
+                        android:gravity="center"
+                        android:text="油门"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_brake"
+                    android:layout_width="235px"
+                    android:layout_height="384px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/iv_brake"
+                        android:layout_width="235px"
+                        android:layout_height="256px"
+                        android:background="@drawable/bg_iv_brake" />
+
+                    <TextView
+                        android:layout_width="235px"
+                        android:layout_height="128px"
+                        android:gravity="center"
+                        android:text="刹车"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_urgent"
+                    android:layout_width="235px"
+                    android:layout_height="384px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_urgent"
+                        android:layout_width="235px"
+                        android:layout_height="235px"
+                        android:layout_marginTop="10px"
+                        android:layout_marginBottom="10px"
+                        android:background="@drawable/bg_cb_urgent"
+                        android:button="@null" />
+                    <!--<ImageView-->
+                    <!--android:id="@+id/iv_urgent"-->
+                    <!--android:layout_width="235px"-->
+                    <!--android:layout_height="256px"-->
+                    <!--android:src="@drawable/bg_iv_urgent" />-->
+
+                    <TextView
+                        android:layout_width="235px"
+                        android:layout_height="128px"
+                        android:gravity="center"
+                        android:text="紧急制动"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_locking"
+                    android:layout_width="235px"
+                    android:layout_height="384px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cb_locking"
+                        android:layout_width="235px"
+                        android:layout_height="235px"
+                        android:layout_marginTop="10px"
+                        android:layout_marginBottom="10px"
+                        android:background="@drawable/bg_cb_locking"
+                        android:button="@null"
+                        android:checked="true"
+                        />
+
+                    <!--<ImageView-->
+                    <!--android:id="@+id/iv_locking"-->
+                    <!--android:layout_width="235px"-->
+                    <!--android:layout_height="256px"-->
+                    <!--android:src="@drawable/bg_iv_locking" />-->
+
+                    <TextView
+                        android:layout_width="235px"
+                        android:layout_height="128px"
+
+                        android:gravity="center"
+                        android:text="切换挡位"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_gear"
+                    android:layout_width="235px"
+                    android:layout_height="384px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_gear"
+                        android:layout_width="235px"
+                        android:layout_height="256px"
+                        android:src="@drawable/bg_iv_gear"
+                        android:visibility="gone" />
+
+                    <com.example.administrator.testone.WheelView
+                        android:id="@+id/wv_gear"
+                        android:layout_width="235px"
+                        android:layout_height="256px"
+                        android:layout_marginTop="10px"
+                        android:layout_marginBottom="10px"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        />
+
+                    <TextView
+                        android:layout_width="235px"
+                        android:layout_height="128px"
+                        android:gravity="center"
+                        android:paddingTop="25px"
+                        android:text="档位切换"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

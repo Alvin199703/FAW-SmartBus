@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".remoteDriving">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/ll_go_forward"
+            android:layout_width="match_parent"
+            android:layout_height="235px"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/iv_forward"
+                android:layout_width="235px"
+                android:layout_height="235px"
+                android:background="@drawable/bg_iv_forward"
+                android:layout_gravity="center_horizontal"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_right_turn"
+            android:layout_width="wrap_content"
+            android:layout_height="235px"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/iv_left"
+                android:layout_width="235px"
+                android:layout_height="235px"
+                android:background="@drawable/bg_iv_left"
+                />
+            <Button
+                android:id="@+id/iv"
+                android:layout_width="235px"
+                android:layout_height="235px"
+                android:text="OK"
+                />
+            <Button
+                android:id="@+id/iv_right"
+                android:layout_width="235px"
+                android:layout_height="235px"
+                android:background="@drawable/bg_iv_right" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_go_back"
+            android:layout_width="match_parent"
+            android:layout_height="235px"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/iv_back"
+                android:layout_width="235px"
+                android:layout_height="235px"
+                android:background="@drawable/bg_iv_back"
+                android:layout_gravity="center_horizontal"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="384px"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/ll_accelerator"
+                android:layout_width="235px"
+                android:layout_height="384px"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/iv_accelerator"
+                    android:layout_width="235px"
+                    android:layout_height="256px"
+                    android:background="@drawable/bg_iv_accelerator" />
+
+                <TextView
+                    android:layout_width="235px"
+                    android:layout_height="128px"
+
+                    android:gravity="center"
+                    android:text="油门"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_brake"
+                android:layout_width="235px"
+                android:layout_height="384px"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/iv_brake"
+                    android:layout_width="235px"
+                    android:layout_height="256px"
+                    android:background="@drawable/bg_iv_brake" />
+
+                <TextView
+                    android:layout_width="235px"
+                    android:layout_height="128px"
+                    android:gravity="center"
+                    android:text="刹车"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_urgent"
+                android:layout_width="235px"
+                android:layout_height="384px"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cb_urgent"
+                    android:layout_width="235px"
+                    android:layout_height="235px"
+                    android:layout_marginBottom="10px"
+                    android:layout_marginTop="10px"
+                    android:background="@drawable/bg_cb_urgent"
+                    android:button="@null" />
+                <!--<ImageView-->
+                <!--android:id="@+id/iv_urgent"-->
+                <!--android:layout_width="235px"-->
+                <!--android:layout_height="256px"-->
+                <!--android:src="@drawable/bg_iv_urgent" />-->
+
+                <TextView
+                    android:layout_width="235px"
+                    android:layout_height="128px"
+                    android:gravity="center"
+                    android:text="紧急制动"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_locking"
+                android:layout_width="235px"
+                android:layout_height="384px"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cb_locking"
+                    android:layout_width="235px"
+                    android:layout_height="235px"
+                    android:layout_marginBottom="10px"
+                    android:layout_marginTop="10px"
+                    android:background="@drawable/bg_cb_locking"
+                    android:button="@null"
+                    android:checked="true"/>
+                <!--<ImageView-->
+                <!--android:id="@+id/iv_locking"-->
+                <!--android:layout_width="235px"-->
+                <!--android:layout_height="256px"-->
+                <!--android:src="@drawable/bg_iv_locking" />-->
+
+                <TextView
+                    android:layout_width="235px"
+                    android:layout_height="128px"
+
+                    android:gravity="center"
+                    android:text="车门锁定"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

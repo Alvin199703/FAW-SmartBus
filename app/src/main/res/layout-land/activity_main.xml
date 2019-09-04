@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/biaoti"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="一汽约车"
+                    android:visibility="gone"
+                    android:textColor="#FFA500" />
+
+                <!--Button
+                    android:id="@+id/set"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/setting"
+                    /-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/ticket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/test"
+                    android:enabled="false"
+                    android:text="车票"
+                    android:textSize="15sp" />
+                <Spinner
+                    android:id="@+id/monitor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/settingcolor"
+                    android:entries="@array/province2"
+                    android:textSize="40sp"></Spinner>
+
+                <!--Button
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/test"
+                    android:text="车一监控"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/time1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/test"
+                    android:text="车二监控"
+                    android:textSize="15sp" /-->
+
+                <Button
+                    android:id="@+id/driving"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/test"
+                    android:button="@null"
+                    android:enabled="false"
+                    android:text="遥控驾驶"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            android:id="@+id/appointmentsuccess">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="预约成功"
+                    android:textSize="18dp"
+                    android:textColor="#1Fa500"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/busid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/settingcolor"
+                    android:textSize="15sp" />
+                <Button
+                    android:id="@+id/busspeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/settingcolor"
+                    android:textSize="15sp" />
+                <Button
+                    android:id="@+id/busorientation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/settingcolor"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+                <Button
+                    android:id="@+id/getin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/settingcolor"
+                    android:text="上车,关闭车门！"
+                    android:textSize="15sp" />
+                <Button
+                    android:id="@+id/goout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/settingcolor"
+                    android:text="下车,打开车门！"
+                    android:textSize="15sp" />
+                <Button
+                    android:id="@+id/havegoout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/settingcolor"
+                    android:text="已下车，关闭车门！"
+                    android:enabled="false"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/map"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <com.baidu.mapapi.map.MapView
+                android:id="@+id/bmapView"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:clickable="true" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="#0000"
+                android:padding="0dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:visibility="gone"
+                >
+                <EditText
+                    android:id="@+id/city_name_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <EditText
+                    android:id="@+id/search_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    />
+
+                <Button
+                    android:id="@+id/startSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:background="@drawable/button_shape"
+                    android:text="搜索" />
+
+
+
+            </LinearLayout>
+
+            <!--<android.support.design.widget.FloatingActionButton
+                android:id="@+id/sure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="45dp"
+
+                android:src="@drawable/make_sure"
+                app:backgroundTint="#30469b"
+                app:borderWidth="0dp"
+                app:elevation="20dp"
+                app:rippleColor="#a6a6a6" />-->
+            <Button
+                android:id="@+id/close"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center|bottom"
+                android:visibility="gone"
+                android:textColor="#000000"
+                android:background="@drawable/button_shape"
+                android:text="关闭车门" />
+        </FrameLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:id="@+id/lai">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="158dp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/spacer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="20dp"
+
+                    android:background="@drawable/settingcolor"
+                    android:entries="@array/province1"
+
+                    android:textSize="40sp"></Spinner>
+
+                <Button
+                    android:id="@+id/appointment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/settingcolor"
+                    android:text="预约"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/settingcolor"
+                    android:text="取消"
+
+                    android:textSize="15sp" />
+
+                <Spinner
+                    android:id="@+id/number1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/settingcolor"
+                    android:entries="@array/province1"
+
+                    android:textSize="40sp"></Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/qidian"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/settingcolor"
+                    android:entries="@array/province1"
+                    android:textSize="40sp"></Spinner>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center">
+                <Spinner
+                    android:id="@+id/zhongdian"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:background="@drawable/settingcolor"
+                    android:entries="@array/province1"
+
+
+
+                    android:textSize="40sp"></Spinner>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:visibility="gone"
+            android:id="@+id/lue"
+            >
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+
+                android:id="@+id/tu"
+                >
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:id="@+id/tu1"
+                    >
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="60dp"
+                        android:id="@+id/talk"
+                        android:text="您目前没有预约！"/>
+
+
+                </LinearLayout>
+            </ScrollView>
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:background="@drawable/weixin"
+                android:id="@+id/fenxiang"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+
+            android:visibility="gone"
+            android:id="@+id/jiankong"
+            >
+            <SurfaceView
+                android:id="@+id/realplay_sv_outside"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="15"
+                android:background="@android:color/transparent" />
+            <SurfaceView
+                android:id="@+id/realplay_sv_inside"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="15"
+                android:layout_marginTop="5dp"
+
+                android:background="@android:color/transparent" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:id="@+id/fanhui"
+                    android:text="返回"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:id="@+id/fangdaout"
+                    android:text="放大摄像头一"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:id="@+id/fangdain"
+                    android:text="放大摄像头二"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:visibility="gone"
+            android:id="@+id/remotedriving"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/ll_go_forward"
+                android:layout_width="match_parent"
+                android:layout_height="235px"
+                android:orientation="vertical"
+                >
+
+                <Button
+                    android:id="@+id/iv_forward"
+                    android:layout_width="235px"
+                    android:layout_height="235px"
+                    android:background="@drawable/bg_iv_forward"
+                    android:layout_gravity="center_horizontal"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_right_turn"
+                android:layout_width="wrap_content"
+                android:layout_height="235px"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/iv_left"
+                    android:layout_width="235px"
+                    android:layout_height="235px"
+                    android:background="@drawable/bg_iv_left"
+                    />
+                <Button
+                    android:id="@+id/iv"
+                    android:layout_width="235px"
+                    android:layout_height="235px"
+                    android:text="OK"
+                    />
+                <Button
+                    android:id="@+id/iv_right"
+                    android:layout_width="235px"
+                    android:layout_height="235px"
+                    android:background="@drawable/bg_iv_right" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_go_back"
+                android:layout_width="match_parent"
+                android:layout_height="235px"
+                android:orientation="vertical"
+                >
+
+                <Button
+                    android:id="@+id/iv_back"
+                    android:layout_width="235px"
+                    android:layout_height="235px"
+                    android:background="@drawable/bg_iv_back"
+                    android:layout_gravity="center_horizontal"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="384px"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/ll_accelerator"
+                    android:layout_width="235px"
+                    android:layout_height="384px"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/iv_accelerator"
+                        android:layout_width="235px"
+                        android:layout_height="256px"
+                        android:background="@drawable/bg_iv_accelerator" />
+
+                    <TextView
+                        android:layout_width="235px"
+                        android:layout_height="128px"
+
+                        android:gravity="center"
+                        android:text="油门"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_brake"
+                    android:layout_width="235px"
+                    android:layout_height="384px"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/iv_brake"
+                        android:layout_width="235px"
+                        android:layout_height="256px"
+                        android:background="@drawable/bg_iv_brake" />
+
+                    <TextView
+                        android:layout_width="235px"
+                        android:layout_height="128px"
+                        android:gravity="center"
+                        android:text="刹车"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_urgent"
+                    android:layout_width="235px"
+                    android:layout_height="384px"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_urgent"
+                        android:layout_width="235px"
+                        android:layout_height="235px"
+                        android:layout_marginBottom="10px"
+                        android:layout_marginTop="10px"
+                        android:background="@drawable/bg_cb_urgent"
+                        android:button="@null" />
+                    <!--<ImageView-->
+                    <!--android:id="@+id/iv_urgent"-->
+                    <!--android:layout_width="235px"-->
+                    <!--android:layout_height="256px"-->
+                    <!--android:src="@drawable/bg_iv_urgent" />-->
+
+                    <TextView
+                        android:layout_width="235px"
+                        android:layout_height="128px"
+                        android:gravity="center"
+                        android:text="紧急制动"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_locking"
+                    android:layout_width="235px"
+                    android:layout_height="384px"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_locking"
+                        android:layout_width="235px"
+                        android:layout_height="235px"
+                        android:layout_marginBottom="10px"
+                        android:layout_marginTop="10px"
+                        android:background="@drawable/bg_cb_locking"
+                        android:button="@null"
+                        android:checked="true"/>
+                    <!--<ImageView-->
+                    <!--android:id="@+id/iv_locking"-->
+                    <!--android:layout_width="235px"-->
+                    <!--android:layout_height="256px"-->
+                    <!--android:src="@drawable/bg_iv_locking" />-->
+
+                    <TextView
+                        android:layout_width="235px"
+                        android:layout_height="128px"
+
+                        android:gravity="center"
+                        android:text="车门锁定"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gobackfromD"
+
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/settingcolor"
+                android:text="结束遥控驾驶"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:visibility="gone"
+        app:menu="@menu/nav_menu"/>
+</android.support.constraint.ConstraintLayout>
